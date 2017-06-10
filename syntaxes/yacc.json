@@ -1,0 +1,200 @@
+{
+  "fileTypes": [
+    "y",
+    "yy",
+    "ypp",
+    "yxx",
+    "y++",
+    "bison",
+    "BISON"
+  ],
+  "name": "Yacc",
+  "scopeName": "source.yacc",
+  "injections": {
+    "cpp.yacc - (string | comment)": {
+      "patterns": [
+        {
+          "include": "#injected.cpp"
+        }
+      ]
+    }
+  },
+  "patterns": [
+    {
+      "include": "#grammar.before"
+    },
+    {
+      "include": "#grammar.rules"
+    }
+  ],
+  "repository": {
+    "injected.cpp": {
+      "patterns": [
+        {
+          "include": "source.cpp"
+        }
+      ]
+    },
+    "string.double_quote": {
+      "begin": "\"",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.yacc"
+        }
+      },
+      "end": "\"",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.yacc"
+        }
+      },
+      "name": "string.quoted.double.yacc",
+      "patterns": [
+        {
+          "include": "source.c#string_escaped_char"
+        },
+        {
+          "include": "source.c#string_placeholder"
+        }
+      ]
+    },
+    "string.single_quote": {
+      "begin": "'",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.yacc"
+        }
+      },
+      "end": "'",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.yacc"
+        }
+      },
+      "name": "string.quoted.single.c",
+      "patterns": [
+        {
+          "include": "source.c#string_escaped_char"
+        }
+      ]
+    },
+    "special_identifiers": {
+      "match": "[@$](\\d+|\\$)",
+      "name": "support.variable.yacc"
+    },
+    "grammar.before": {
+      "patterns": [
+        {
+          "include": "#decls.cpp"
+        },
+        {
+          "include": "#options"
+        }
+      ]
+    },
+    "decls.cpp": {
+      "begin": "^%{",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.separator.tag.section.yacc"
+        }
+      },
+      "end": "^%}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.separator.tag.section.yacc"
+        }
+      },
+      "name": "cpp.yacc"
+    },
+    "options": {
+      "patterns": [
+        {
+          "include": "source.c#comments"
+        },
+        {
+          "include": "#string.double_quote"
+        },
+        {
+          "include": "#string.single_quote"
+        },
+        {
+          "include": "#options_type"
+        },
+        {
+          "include": "#options_basic"
+        }
+      ]
+    },
+    "options_basic": {
+      "match": "^%(debug|defines|destructor|dprec|error-verbose|expect|glr-parser|initial-action|left|lex-param|locations|merge|name-prefix|no[_-]lines|nonassoc|output|parse-param|prec|pure[_-]parser|raw|require|right|start|token[_-]table|union|token)",
+      "name": "keyword.source.yacc"
+    },
+    "options_type": {
+      "match": "(^%(?:token|type))\\s*\\<(.*?)\\>",
+      "captures": {
+        "1": {
+          "name": "keyword.source.yacc"
+        },
+        "2": {
+          "name": "support.type.yacc"
+        }
+      }
+    },
+    "grammar.rules": {
+      "begin": "^%%",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.separator.tag.section.yacc"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#grammar.after"
+        },
+        {
+          "include": "#rule"
+        }
+      ]
+    },
+    "rule": {
+      "begin": "(_?[\\w\\-_]*[\\w\\d\\-_]\\w*):",
+      "beginCaptures": {
+        "1": {
+          "name": "variable.language.yacc"
+        }
+      },
+      "end": ";",
+      "patterns": [
+        {
+          "include": "#rule.code"
+        },
+        {
+          "include": "#string.single_quote"
+        },
+        {
+          "include": "#string.double_quote"
+        }
+      ]
+    },
+    "rule.code": {
+      "begin": "{",
+      "end": "}",
+      "name": "cpp.yacc",
+      "patterns": [
+        {
+          "include": "#special_identifiers"
+        }
+      ]
+    },
+    "grammar.after": {
+      "begin": "^%%",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.source.yacc"
+        }
+      },
+      "name": "cpp.yacc"
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+    "name": "lex-flex-yacc-bison",
+    "displayName": "Lex Yacc Flex Bison",
+    "description": "Language support for Lex, Yacc, Flex and Bison.",
+    "version": "0.0.1",
+    "publisher": "faustinoaq",
+    "icon": "images/icon.svg",
+    "license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/faustinoaq/vscode-lex-flex-yacc-bison"
+	},
+	"bugs": "https://github.com/faustinoaq/vscode-lex-flex-yacc-bison/issues",
+    "engines": {
+        "vscode": "^1.12.0"
+    },
+	"keywords": [
+	    "lex",
+	    "flex",
+	    "yacc",
+	    "bison",
+		"syntax",
+		"languages"
+	],
+    "categories": [
+        "Languages"
+    ],
+	"galleryBanner": {
+		"color": "#b4459a",
+		"theme": "dark"
+    },
+    "contributes": {
+        "languages": [
+            {
+                "id": "lex",
+                "aliases": [
+                    "Lex/Flex",
+                    "lex"
+                ],
+                "extensions": [
+                    ".l"
+                ],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "yacc",
+                "aliases": [
+                    "Yacc/Bison",
+                    "yacc"
+                ],
+                "extensions": [
+                    ".y",
+                    ".yy",
+                    ".ypp",
+                    ".yxx",
+                    ".y++",
+                    ".bison",
+                    ".BISON"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "lex",
+                "scopeName": "source.lex",
+                "path": "./syntaxes/lex.tmLanguage"
+            },
+            {
+                "language": "yacc",
+                "scopeName": "source.yacc",
+                "path": "./syntaxes/yacc.json"
+            }
+        ]
+    }
+}
