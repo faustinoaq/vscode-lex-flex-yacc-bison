@@ -1,10 +1,10 @@
 {
     "name": "lex-flex-yacc-bison",
-    "displayName": "Lex Yacc Flex Bison",
-    "description": "Language support for Lex, Yacc, Flex and Bison.",
-    "version": "0.0.1",
+    "displayName": "Lex Flex Yacc Bison",
+    "description": "Language support for Lex, Flex, Yacc and Bison.",
+    "version": "0.0.2",
     "publisher": "faustinoaq",
-    "icon": "images/icon.svg",
+    "icon": "images/icon.png",
     "license": "MIT",
 	"repository": {
 		"type": "git",
