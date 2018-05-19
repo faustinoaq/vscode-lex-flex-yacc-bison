@@ -38,7 +38,8 @@
                     "lex"
                 ],
                 "extensions": [
-                    ".l"
+                    ".l",
+		    ".flex",
                 ],
                 "configuration": "./language-configuration.json"
             },
