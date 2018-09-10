@@ -39,7 +39,11 @@
                 ],
                 "extensions": [
                     ".l",
-		    ".flex",
+                    ".ll",
+                    ".l++",
+                    ".lxx",
+                    ".lpp",
+                    ".flex"
                 ],
                 "configuration": "./language-configuration.json"
             },
