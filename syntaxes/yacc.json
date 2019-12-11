@@ -158,7 +158,7 @@
       ]
     },
     "rule": {
-      "begin": "(_?[\\w\\-_]*[\\w\\d\\-_]\\w*):",
+      "begin": "([\\w\\-_][\\w\\d\\-_]*)([ ]*):",
       "beginCaptures": {
         "1": {
           "name": "variable.language.yacc"
