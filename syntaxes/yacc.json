@@ -159,6 +159,9 @@
       },
       "patterns": [
         {
+          "include": "source.c#comments"
+        },
+        {
           "include": "#grammar.after"
         },
         {
@@ -175,6 +178,9 @@
       },
       "end": ";",
       "patterns": [
+        {
+          "include": "source.c#comments"
+        },
         {
           "include": "#rule.code"
         },
