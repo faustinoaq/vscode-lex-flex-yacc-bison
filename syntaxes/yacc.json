@@ -31,6 +31,12 @@
     "injected.cpp": {
       "patterns": [
         {
+          "include": "#special_identifiers"
+        },
+        {
+          "include": "#integers"
+        },
+        {
           "include": "source.cpp"
         }
       ]
@@ -81,6 +87,9 @@
     "special_identifiers": {
       "match": "[@$](\\d+|\\$)",
       "name": "support.variable.yacc"
+    },
+    "integers": {
+        "match": "(-?[0-9]+)"
     },
     "grammar.before": {
       "patterns": [
