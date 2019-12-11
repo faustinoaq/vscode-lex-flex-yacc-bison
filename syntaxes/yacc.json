@@ -114,7 +114,15 @@
           "name": "punctuation.separator.tag.section.yacc"
         }
       },
-      "name": "cpp.yacc"
+      "name": "source.cpp",
+      "patterns": [
+        {
+          "include": "#integers"
+        },
+        {
+          "include": "source.cpp"
+        }
+      ]
     },
     "options": {
       "patterns": [
@@ -209,7 +217,15 @@
           "name": "keyword.source.yacc"
         }
       },
-      "name": "cpp.yacc"
+      "name": "source.cpp",
+      "patterns": [
+        {
+          "include": "#integers"
+        },
+        {
+          "include": "source.cpp"
+        }
+      ]
     }
   }
 }
