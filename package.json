@@ -2,7 +2,7 @@
     "name": "lex-flex-yacc-bison",
     "displayName": "Lex Flex Yacc Bison",
     "description": "Language support for Lex, Flex, Yacc and Bison.",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "faustinoaq",
     "icon": "images/icon.png",
     "license": "MIT",
